@@ -35,10 +35,11 @@ def single_number(arr):
     for i in arr:
         if i not in single:
             single.append(i)
-        #if the i element has already been added to the single array then remove it.  
         else:
+        #if the i element has already been added to the single array then remove it.  
+        #duplicates then are removed
             single.remove(i)
-    #return the first item from the single array
+    #return the first item from the single array where the single interger should remain
     return single[0]
 
     
