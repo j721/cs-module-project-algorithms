@@ -29,18 +29,19 @@ def single_number(arr):
     # Your code here
 
     #create an array that will hold the single interger
-    # single = []
+    single = []
 
-    # #loop through every element in the arr
-    # for i in arr:
-    #     if i not in single:
-    #         single.append(i)
-    #     else:
-    #     #if the i element has already been added to the single array then remove it.  
-    #     #duplicates then are removed
-    #         single.remove(i)
-    # #return the first item from the single array where the single interger should remain
-    # return single[0]
+    #loop through every element in the arr
+    for i in arr:
+        #if element doesn't exist in single array than append that item to single array
+        if i not in single:
+            single.append(i)
+        else:
+        #if the i element has already been added to the single array then remove it.  
+        #duplicates are then removed
+            single.remove(i)
+    #return the first item from the single array where the single interger should remain
+    return single[0]
 
     # #2nd solution also works for Day 2
 
@@ -51,7 +52,7 @@ def single_number(arr):
 
     #set method creates an array with unique elements. Doesn't allow duplicates
     #    2* sum(arr no duplicates) -sum(array)    
-    return 2 * sum(set(arr))- sum(arr)
+    # return 2 * sum(set(arr))- sum(arr)
     
 
 if __name__ == '__main__':
