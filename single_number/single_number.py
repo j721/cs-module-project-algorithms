@@ -29,19 +29,29 @@ def single_number(arr):
     # Your code here
 
     #create an array that will hold the single interger
-    single = []
+    # single = []
 
-    #loop through every element in the arr
-    for i in arr:
-        if i not in single:
-            single.append(i)
-        else:
-        #if the i element has already been added to the single array then remove it.  
-        #duplicates then are removed
-            single.remove(i)
-    #return the first item from the single array where the single interger should remain
-    return single[0]
+    # #loop through every element in the arr
+    # for i in arr:
+    #     if i not in single:
+    #         single.append(i)
+    #     else:
+    #     #if the i element has already been added to the single array then remove it.  
+    #     #duplicates then are removed
+    #         single.remove(i)
+    # #return the first item from the single array where the single interger should remain
+    # return single[0]
 
+    # #2nd solution also works for Day 2
+
+    #If we add each number once and multiply the sum by 2, 
+    # we will get twice sum of each element of the array. 
+    # Then we will subtract the sum of the whole array from the twice_sum 
+    # and get the required number (which appears once in the array).#
+
+    #set method creates an array with unique elements. Doesn't allow duplicates
+    #    2* sum(arr no duplicates) -sum(array)    
+    return 2 * sum(set(arr))- sum(arr)
     
 
 if __name__ == '__main__':
