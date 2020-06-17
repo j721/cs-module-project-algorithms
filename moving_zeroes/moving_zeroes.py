@@ -22,7 +22,10 @@ Returns: a List of integers
 #else if zero does not exist in array 
 #then just return the array back
 
-# E
+# Execute (E)
+#use for loop to iterate through array
+# if index at array arr[i] !== 0
+  #  return arr
 # R
 # #
 
@@ -30,7 +33,20 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Your code here
 
-    pass
+    #initialize count    
+    count = 0
+
+    if arr[0] !=0:
+        return arr
+
+    if arr[i] ==0:
+        for i in arr:
+            if arr[i] !=0:
+                arr[count] = arr[i]
+                count +=1
+
+
+        
 
 
 if __name__ == '__main__':
