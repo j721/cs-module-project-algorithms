@@ -17,18 +17,63 @@ Returns: a List of integers
 #window moves from left to right (beginning to end) of array
 
 # P
-#possibly call recursion
+#possibly change the parameters when calling the range in the for loop
 #need to iterate over array, with window array set to k amount/limit
 #another for loop over the array
     #need to calculate the max value
-    #maybe think of as a node list?
+    #take the length of array (nums) and subtract from that - k (limit for window) + 1
+ 
 # E
+#window should have a max of k(number amount)
+#window min starts at 0
+#create an array for that will hold the max value
+
+#Use Python max() function
+# The Python max() function returns the largest item in an iterable. 
+# It can also be used to find the largest item between two or more parameters.
+
 # R
 # #
 def sliding_window_max(nums, k):
     # Your code here
 
-    pass
+    #initialize window to have a min value at 0 and max value at k
+    #create max_values array to be returned
+    window_min = 0
+    window_max = k
+    max_values = []
+
+    #traverse through nums array
+    for i in nums:
+        #have window in nums array be set within its limits of min and max
+        window = nums[window_min: window_max]
+        #once the window lands on a spot in the nums array calculate the max value of elements from that window
+        #append the max value into the max_values array to be returned
+        max_values.append(max(window))
+
+        #if window_max is less than the length of the nums array
+        #then increment the min and k to be able to calculate the max
+        if window_max < len(nums):
+            window_min +=1
+            window_max +=1
+        #else if the window_max exceeds/greater then the length of the nums array. Then there would be no window    
+        else:
+            break
+    
+    return max_values
+
+
+
+
+    # max = [0] * (len(nums) - k +1)
+    # window = []
+    # for i in range (len(nums)- k +1):
+    #     window = nums[i:i + k]
+    #     max[i] = max(window)
+
+    # return max
+
+
 
 
 if __name__ == '__main__':
