@@ -27,7 +27,9 @@ Returns: a List of integers
 #use for loop to iterate through array
 # if index at array arr[i] !== 0
   #  return arr
-# R
+
+# Reflect
+#referenced Data Structures Project- doubly_linked list file. move_to_end function for 2nd method
 # #
 
 
