@@ -23,7 +23,9 @@ Returns: a List of integers
     #for loop to go over the interger array
     #for loop to go over the products array and check to make sure that index won't be included in product
 
-    #
+    # to create product for when element a in array does not equal to element i from other for loop in original array
+    #a!=i
+    #then do *= to multiply the elements in the array to create a product
 
 #R
 
@@ -31,16 +33,20 @@ Returns: a List of integers
 def product_of_all_other_numbers(arr):
     # Your code here
 
-    #intialize product
-    product = [0]*len(arr)
+    #create empty product array
+    product = []
 
+    #loop over the product array
     for i in range(0, len(arr)):
-        item =1
-        for a in arr:
+        #initialize first product_item in the array as 1
+        product_item =1
+        #loop through the other array that has the original intergers from the range of 0 to the length of the array
+        for a in range(0, len(arr)):
+            #at the index, the element a that was iterated over should not be equal to the index
+            #if this condition is met then product_item will 
             if a!= i:
-                item *= arr[a]
-        product[i] = item
-        item =1
+                product_item *= arr[a]
+        product.append(product_item)
 
     return product
 
