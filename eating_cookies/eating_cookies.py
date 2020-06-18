@@ -44,7 +44,7 @@ Returns: an integer
 
 #n stands for input size- number of cookies in the jar
 #pass in cache (memory storage holder) as parameter and default to none
-#cache helps to make run time faster. data structure that stores redundant data
+#cache helps to make run time faster O (n). data structure that stores redundant data
 #cache is a dictionary where keys is the n, value is the answer
 
 def eating_cookies(n, cache = None):
@@ -69,12 +69,20 @@ def eating_cookies(n, cache = None):
     #edge case if the index of cache[n] is at 0 
     #ate all of the cookies at once (eating all 3 cookies)
     elif cache[n] == 0:
+        #answer saved in cache for future uses and call function recursively
         cache[n] = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
     
     #return number of ways to eat cookies
     return cache[n]
 
-  
+#Lecture method
+#   def eating_cookies(n):
+#     if n < 0:
+#         return 0
+#     elif n == 0:
+#         return 1
+#     elif cache[n] > 0:
+
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation

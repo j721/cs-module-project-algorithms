@@ -34,24 +34,62 @@ def product_of_all_other_numbers(arr):
 #     # Your code here
 
 #     #create empty product array
-    product = []
+    # product = []
 
-    #loop over the product array
-    for i in range(0, len(arr)):
-        #initialize first product_item in the array as 1
-        product_item =1
-        #loop through the other array that has the original intergers from the range of 0 to the length of the array
-        for a in range(0, len(arr)):
-            #at the index, the element a that was iterated over should not be equal to the index
-            #if this condition is met then product_item will 
-            if a!= i:
-                product_item *= arr[a]
-        product.append(product_item)
+    # #loop over the product array
+    # for i in range(0, len(arr)):
+    #     #initialize first product_item in the array as 1??
+    #    #have the index element that was removed. Have its value now become 1
+    #      #so that when calculating the rest of the products in the array, multiplying by 1 doesn't effect it
+    #     product_item =1
+    #     #loop through the other array that has the original intergers from the range of 0 to the length of the array
+    #     for a in range(0, len(arr)):
+    #         #at the index, the element a that was iterated over should not be equal to the index
+    #         #if this condition is met then product_item will 
+    #         if a!= i:
+    #             product_item *= arr[a]
+    #     product.append(product_item)
 
-    return product
+    # return product
 
 
+    #2nd method
+    #using the copy method- creates a shallow copy of the array
+    #pop method- remove item and return that removed item at a given index
+    #Enumerate() method adds a counter to an iterable and returns it in a form of enumerate object. 
+    # This enumerate object can then be used directly in for loops
+    #  or be converted into a list of tuples using list() method.
 
+
+    # Syntax:
+
+    # enumerate(iterable, start=0)
+
+    # Parameters:
+    # Iterable: any object that supports iteration
+    # Start: the index value from which the counter is 
+    #               to be started, by default it is 0 
+
+    #created an empty array that will return the new product values
+    new_arr = []
+
+    #loops through the array
+    #enumerate adds a counter to the iterable arr, starting at index of 0
+    for i, num in enumerate(arr):
+        #create copy of the original array of intergers
+        copy = arr.copy()
+        #pop method-removes the item at the given index and returns it
+        #remove the item at that index
+        copy.pop(i)
+        #for the index element that was removed have its value now be 1, when calculating the product in the rest of the array
+        product = 1
+        #for each element x in the copy array
+        for x in copy:
+            #find the product of everything in the array excluding the index element, which now has a value of 1 which won't effect the product result/outcome
+            product *=x
+        #add the new product into the new_arr
+        new_arr.append(product)
+    return new_arr
                 
 
 
