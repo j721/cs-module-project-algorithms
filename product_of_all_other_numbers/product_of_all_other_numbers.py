@@ -31,9 +31,9 @@ Returns: a List of integers
 
 
 def product_of_all_other_numbers(arr):
-    # Your code here
+#     # Your code here
 
-    #create empty product array
+#     #create empty product array
     product = []
 
     #loop over the product array
@@ -49,6 +49,12 @@ def product_of_all_other_numbers(arr):
         product.append(product_item)
 
     return product
+
+
+
+                
+
+
 
 
 if __name__ == '__main__':
