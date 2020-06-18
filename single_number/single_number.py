@@ -52,7 +52,28 @@ def single_number(arr):
 
     #set method creates an array with unique elements. Doesn't allow duplicates
     #    2* sum(arr no duplicates) -sum(array)    
+
     # return 2 * sum(set(arr))- sum(arr)
+
+
+    #3rd method from lecture
+        #use either dictionary or set
+        #sets: hold onto unique elements
+        #loop through our arr
+        #for each element
+            #check if it already in our set
+            #if it is, then that's not our out-element-out
+
+    # def single_number(arr):
+    #     s = set()
+    #     for x in arr:
+    #         if x in s:
+    #             s.remove(x)
+    #         else:
+    #             s.add(x)
+    #     return list(s)[0] #return contents of s into a list and grab that first element
+
+
     
 
 if __name__ == '__main__':

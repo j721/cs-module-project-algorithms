@@ -43,16 +43,17 @@ def sliding_window_max(nums, k):
     window_max = k
     max_values = []
 
-    #traverse through nums array
+    # #traverse through nums array
     for i in nums:
         #have window in nums array be set within its limits of min and max
+         #if the window reaches the range limit of the nums array then just    
         window = nums[window_min: window_max]
-        #once the window lands on a spot in the nums array calculate the max value of elements from that window
+        #calculate the max value of elements from that window and
         #append the max value into the max_values array to be returned
         max_values.append(max(window))
 
         #if window_max is less than the length of the nums array
-        #then increment the min and k to be able to calculate the max
+        #then increment the window min and window max (k) to have it move from left to right of the nums array
         if window_max < len(nums):
             window_min +=1
             window_max +=1
@@ -62,16 +63,27 @@ def sliding_window_max(nums, k):
     
     return max_values
 
+    #2nd method
+    #initialize empty windows array
+    # windows =[]
+
+    # #if length of nums array is less than /equal to window then don't need to traverse through the array
+    # #just calculate the max value from the k window and add to the Windows Array
+    # if len(nums) <=k:
+    #     windows.append(max(nums))
+    # #else if the window k is less then the length of the nums array we have to set the range for the window to move from left to right
+    # else:
+    #     #have window traverse from nums array
+    #     #number of iterations is array length - (k-1) 
+    #     # (k-1) refers to the window    
+    #     for i in range(0, len(nums)- (k-1)):
+    #         # range of window comes from first i and ends at when k amount index
+    #         max_window = max(nums[i:i +k])
+    #         windows.append(max_window)
+    # return windows
 
 
-
-    # max = [0] * (len(nums) - k +1)
-    # window = []
-    # for i in range (len(nums)- k +1):
-    #     window = nums[i:i + k]
-    #     max[i] = max(window)
-
-    # return max
+ 
 
 
 

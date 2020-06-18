@@ -17,14 +17,51 @@ Returns: an integer
 
 #U
 #need to store this data into memory to keep track of how many times the person is eating the cookie, like using cache?
+#need to pass in cache or memory as a parameter and initialize to None
+
+#n stands for number of cookies
+
+#look up permutations and recursion
+#as well as cache and memoization
+#used ring buffer from sprint as reference as well
+
 # P
+
 # E
 # R#
 
-def eating_cookies(n):
+#n stands for input size- number of cookies in the jar
+#pass in cache (memory storage holder) as parameter and default to none
+#cache helps to make run time faster
+def eating_cookies(n, cache = None):
     # Your code here
 
-    pass
+    #if cache array is empty then initialize it
+    if cache == None:
+        cache = [0] * (n + 1) #(n+1) refering to the input size incrementing/increasing by 1. 
+        
+
+    #if input n is less than or equal to 1 than cache storage index will still be at 1
+    #basically there is just one way to eat the cookie 
+    # and there is one way where he can not eat the cookie
+    if n <= 1:
+        cache[n] = 1
+
+    #if input of cookies is 2, then cache storage index will be at 2
+    #there are 2 ways in which he eat the cookie
+    elif n ==2:
+        cache[n] = 2
+
+    #edge case if the index of cache[n] is at 0 
+    #ate all of the cookies at once (eating all 3 cookies)
+    elif cache[n] == 0:
+        cache[n] = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
+    
+    #return number of ways to eat cookies
+    return cache[n]
+
+    #other less efficient method
+
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
