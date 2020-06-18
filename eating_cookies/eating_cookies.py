@@ -30,9 +30,23 @@ Returns: an integer
 # E
 # R#
 
+#Less efficient method
+# def eating_cookies(n):
+#     if n < 0:
+#         return 0
+#     elif n == 0:
+#         return 1
+#     else:
+#         return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+
+
+
+
 #n stands for input size- number of cookies in the jar
 #pass in cache (memory storage holder) as parameter and default to none
-#cache helps to make run time faster
+#cache helps to make run time faster. data structure that stores redundant data
+#cache is a dictionary where keys is the n, value is the answer
+
 def eating_cookies(n, cache = None):
     # Your code here
 
@@ -60,8 +74,7 @@ def eating_cookies(n, cache = None):
     #return number of ways to eat cookies
     return cache[n]
 
-    #other less efficient method
-
+  
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
